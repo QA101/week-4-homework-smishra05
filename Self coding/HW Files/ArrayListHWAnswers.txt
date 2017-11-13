@@ -16,8 +16,16 @@ public int sumEvenIndexes(int[] nums) {
 
 public int sumEvenIndexesB(ArrayList<Integer> numsList) 
 {     
-       
-	 
+        int sum = 0;
+		for (int i=0; i<numsList.size(); i++)
+	    {
+			if(i%2==0)
+			{
+				sum = sum+numsList.get(i);
+							
+			}
+	    }
+		return sum;  
 }
 
 // Test Scenarios:
@@ -49,7 +57,16 @@ public int evenCount(int[] nums) {
 
 public int evenCountB(ArrayList<Integer> numsList) 
 {     
-      
+        int count = 0;
+		for (int i=0; i<numsList.size(); i++)
+	    {
+			if(numsList.get(i)%2==0)
+			{
+				count++;
+							
+			}
+	    }
+		return count;    
 }
 
 // Test Scenarios:
@@ -82,7 +99,23 @@ public String[] backwardChars(String str) {
 
 public ArrayList<String> backwardCharsB(String str) 
 {    
-
+    ArrayList<String> inputList = new ArrayList<String>();
+	    ArrayList<String> resultList = new ArrayList<String>();
+	      
+	    int temp = 0;
+	   	for (int i=0;i<str.length(); i++)
+	    {
+	       inputList.add(temp,str.substring(i, i+1));
+	       temp++;
+	    }
+	    for (int i=0;i<inputList.size(); i++)
+	    {
+	       resultList.add(inputList.get(inputList.size() - i - 1));
+	       temp++;
+	    }
+	    
+		return resultList;
+	}
 }
 
 // Test Scenarios:
@@ -119,7 +152,18 @@ public String[] catty(String[] animals) {
 
 public ArrayList<String> cattyB(ArrayList<String> animalsList) 
 {    
-
+	ArrayList<String> catsresultList = new ArrayList<String>();
+				for(int i = 0;i<animalsList.size();i++)
+				{
+					if(animalsList.get(i).contains("cat") || animalsList.get(i).contains("Cat") )
+					{
+						catsresultList.add(animalsList.get(i));
+					}
+				}
+				
+					
+				
+				return catsresultList;  
 }
 
 // Test Scenarios:
